@@ -9,3 +9,8 @@
 /build
 /captures
 .externalNativeBuild
+
+# IOS
+ios/firemomo/build/
+ios/firemomo/DerivedData/
+ios/firemomo/Pods
