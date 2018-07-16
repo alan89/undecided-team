@@ -1,6 +1,8 @@
 package com.test.firemomo.firemomo;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -21,8 +24,10 @@ import com.google.android.gms.tasks.Tasks;
 import com.test.firemomo.firemomo.util.Async;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.UUID;
 import java.util.concurrent.Callable;
 
@@ -30,7 +35,10 @@ public class ImageEdit extends AppCompatActivity implements View.OnClickListener
 
   private static final String TAG = "ImageEdit";
 
+  public static final String EXTRA_URI = "extra_uri";
+
   private FrameLayout mContainer;
+  private ImageView mImageView;
 
   private EditText mTopText;
   private EditText mBottomText;
@@ -41,20 +49,31 @@ public class ImageEdit extends AppCompatActivity implements View.OnClickListener
     setContentView(R.layout.activity_image_edit);
 
     mContainer = findViewById(R.id.image_container);
+    mImageView = findViewById(R.id.image_main);
+
     mTopText = findViewById(R.id.text_top);
     mBottomText = findViewById(R.id.text_bottom);
 
     findViewById(R.id.button_add_text_top).setOnClickListener(this);
     findViewById(R.id.button_add_text_bottom).setOnClickListener(this);
     findViewById(R.id.button_done).setOnClickListener(this);
+
+    if (getIntent() != null) {
+      Uri uri = getIntent().getParcelableExtra(EXTRA_URI);
+      if (uri != null) {
+        loadPictureFromUri(uri);
+      }
+    }
   }
 
   private void addTopText() {
-    findViewById(R.id.text_top).setVisibility(View.VISIBLE);
+    mTopText.setVisibility(View.VISIBLE);
+    mTopText.requestFocus();
   }
 
   private void addBottomText() {
-    findViewById(R.id.text_bottom).setVisibility(View.VISIBLE);
+    mBottomText.setVisibility(View.VISIBLE);
+    mBottomText.requestFocus();
   }
 
   public void hideKeyboard() {
@@ -80,6 +99,7 @@ public class ImageEdit extends AppCompatActivity implements View.OnClickListener
               @Override
               public void onSuccess(Uri uri) {
                 Toast.makeText(ImageEdit.this, "Saved!", Toast.LENGTH_SHORT).show();
+                reportSuccess(uri);
               }
             })
         .addOnFailureListener(
@@ -91,6 +111,23 @@ public class ImageEdit extends AppCompatActivity implements View.OnClickListener
                 Log.d(TAG, "saveView:onFailure", e);
               }
             });
+  }
+
+  private void reportSuccess(Uri uri) {
+      Intent data = new Intent();
+      data.putExtra(EXTRA_URI, uri);
+
+      setResult(RESULT_OK, data);
+      finish();
+  }
+
+  private void loadPictureFromUri(Uri uri) {
+    try {
+      InputStream is = getContentResolver().openInputStream(uri);
+      mImageView.setImageBitmap(BitmapFactory.decodeStream(is));
+    } catch (FileNotFoundException e) {
+      Log.e(TAG, "FileNotFound", e);
+    }
   }
 
   private Bitmap getViewBitmap(View v) {

@@ -28,14 +28,14 @@
             android:id="@+id/text_top"
             style="@style/AppTheme.MomoText.Editable"
             android:layout_gravity="top"
-            android:text="Top Text"
+            tools:text="Top Text"
             tools:visibility="visible" />
 
         <EditText
             android:id="@+id/text_bottom"
             style="@style/AppTheme.MomoText.Editable"
             android:layout_gravity="bottom"
-            android:text="Bottom Text"
+            tools:text="Bottom Text"
             tools:visibility="visible" />
 
     </FrameLayout>
