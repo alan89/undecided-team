@@ -18,31 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQs-7H-l45" customClass="GIDSignInButton">
-                                <rect key="frame" x="116" y="534" width="143" height="43"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="143" id="LlU-ao-F1d"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydn-jI-7kv" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="164" y="428" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mam-AM-nEc">
+                                <rect key="frame" x="163" y="328.5" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="actnLogout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lmt-HW-hRm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ydn-jI-7kv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2hc-pM-M8W"/>
-                            <constraint firstItem="HQs-7H-l45" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Akm-7v-QYA"/>
-                            <constraint firstItem="HQs-7H-l45" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="514" id="IS8-Zx-AO7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HQs-7H-l45" secondAttribute="bottom" constant="90" id="Tcv-9s-oha"/>
-                            <constraint firstItem="HQs-7H-l45" firstAttribute="top" secondItem="ydn-jI-7kv" secondAttribute="bottom" constant="76" id="oys-sW-rwy"/>
+                            <constraint firstItem="Mam-AM-nEc" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="kYl-nU-a1w"/>
+                            <constraint firstItem="Mam-AM-nEc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="l2C-MD-7nX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="btnFacebookLogin" destination="ydn-jI-7kv" id="AHM-Sd-omX"/>
-                        <outlet property="btnGoogleSignIn" destination="HQs-7H-l45" id="GR9-UA-0zG"/>
+                        <outlet property="btnLogout" destination="Mam-AM-nEc" id="CpB-cZ-kQY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
