@@ -9,13 +9,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -44,7 +44,7 @@ public class MomoCam extends AppCompatActivity implements View.OnClickListener {
 
   private static final String KEY_TEMP_URI = "key_temp_uri";
 
-  private Button takePictureButton, uploadPictureButton;
+  private FloatingActionButton uploadPictureButton;
   private ImageView picTaken;
   private Uri filePath;
 
@@ -62,8 +62,9 @@ public class MomoCam extends AppCompatActivity implements View.OnClickListener {
     storage = FirebaseStorage.getInstance();
     storageReference = storage.getReference();
 
-    takePictureButton = findViewById(R.id.button_image);
     uploadPictureButton = findViewById(R.id.button_upload);
+    uploadPictureButton.setOnClickListener(this);
+
     picTaken = findViewById(R.id.captured_photo);
 
     if (savedInstanceState != null) {
@@ -78,8 +79,10 @@ public class MomoCam extends AppCompatActivity implements View.OnClickListener {
           0);
     }
 
-    takePictureButton.setOnClickListener(this);
-    uploadPictureButton.setOnClickListener(this);
+    // Automatically launch the camera if we haven't yet
+    if (filePath == null) {
+      takePicture();
+    }
   }
 
   @Override
@@ -98,7 +101,12 @@ public class MomoCam extends AppCompatActivity implements View.OnClickListener {
       startActivityForResult(intent, RC_EDIT_PICTURE);
     }
 
-    if (requestCode == RC_EDIT_PICTURE && resultCode == RESULT_OK) {
+    if (requestCode == RC_EDIT_PICTURE) {
+      if (resultCode != RESULT_OK) {
+        filePath = null;
+        return;
+      }
+
       Uri uri = data.getParcelableExtra(ImageEdit.EXTRA_URI);
 
       try {
@@ -112,7 +120,7 @@ public class MomoCam extends AppCompatActivity implements View.OnClickListener {
     }
   }
 
-  private void onTakePictureClicked() {
+  private void takePicture() {
     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
     File photoFile = null;
     try {
@@ -140,6 +148,11 @@ public class MomoCam extends AppCompatActivity implements View.OnClickListener {
     }
   }
 
+  private void onUploadSuccess() {
+    // TODO: Write to the DB
+    finish();
+  }
+
   private void uploadImage(@NonNull Uri uri) {
 
     final ProgressDialog progressDialog = new ProgressDialog(this);
@@ -156,9 +169,11 @@ public class MomoCam extends AppCompatActivity implements View.OnClickListener {
                 progressDialog.dismiss();
                 Toast.makeText(
                         MomoCam.this,
-                        "Uploaded " + storageReference.getDownloadUrl(),
+                        "Uploaded!",
                         Toast.LENGTH_SHORT)
                     .show();
+
+                onUploadSuccess();
               }
             })
         .addOnFailureListener(
@@ -183,9 +198,6 @@ public class MomoCam extends AppCompatActivity implements View.OnClickListener {
   @Override
   public void onClick(View view) {
     switch (view.getId()) {
-      case R.id.button_image:
-        onTakePictureClicked();
-        break;
       case R.id.button_upload:
         onUploadClicked();
         break;
