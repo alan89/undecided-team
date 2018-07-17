@@ -32,10 +32,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         lstMomo = (RecyclerView) findViewById(R.id.lstMomo);
-        goFast=(Button)findViewById(R.id.go_fast);
+
+        goFast= findViewById(R.id.go_fast);
+
         goFast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

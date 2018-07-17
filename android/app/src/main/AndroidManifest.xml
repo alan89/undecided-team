@@ -22,8 +22,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.test.firemomo.firemomo.MomoGen.MomoCam"> </activity>
-
+        <activity android:name="com.test.firemomo.firemomo.MomoGen.MomoCam"></activity>
 
         <activity android:name=".ImageEdit">
             <intent-filter>
@@ -43,6 +42,7 @@
         </provider>
 
     </application>
+
     <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
     <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 

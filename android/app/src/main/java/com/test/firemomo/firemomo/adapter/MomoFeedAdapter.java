@@ -31,7 +31,7 @@ public class MomoFeedAdapter extends RecyclerView.Adapter<MomoViewHolder>  {
     }
     @Override
     public MomoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = (View) LayoutInflater.from(parent.getContext()).inflate(R.layout.momo_feed_item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.momo_feed_item, parent, false);
 
         MomoViewHolder vh = new MomoViewHolder(v);
 
