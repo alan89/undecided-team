@@ -10,22 +10,28 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.test.firemomo.firemomo.MomoGen.MomoCam;
 import com.test.firemomo.firemomo.adapter.MomoFeedAdapter;
 import com.test.firemomo.firemomo.models.Momo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final int LIMIT = 50;
+
     private FloatingActionButton goFast;
     private Intent goCam;
     private RecyclerView lstMomo;
-    ArrayList<Momo> items = new ArrayList<>();
+    ArrayList<Momo> items = new ArrayList<>(LIMIT);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // TODO: order by timestamp, limit the query to 50 or 100 items
         db.collection("posts")
+                .orderBy("createdAt", Query.Direction.DESCENDING)
+                .limit(LIMIT)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value,
@@ -56,22 +63,19 @@ public class MainActivity extends AppCompatActivity {
                             return;
                         }
 
-                        // TODO: Avoid double-adding items by going with DocumentChanges
-                        for (QueryDocumentSnapshot doc : value) {
-                            Momo item = new Momo();
-                            if (doc.get("title") != null) {
-                                item.setImageURL(doc.getString("imageUrl"));
-                                item.setTimeStamp(doc.getDate("createdAt"));
-                                item.setLikes(doc.get("likesCount").toString());
-                                item.setTitle(doc.getString("title"));
-                                item.setMomoId(doc.getString("id"));
-                                item.setCommentCount(doc.get("commentCount").toString());
-                                item.setUsrName(doc.getString("userName"));
+                        List<DocumentChange> changes = value.getDocumentChanges();
 
+                        for (DocumentChange change : changes) {
+                            if (change.getType() == DocumentChange.Type.ADDED) {
+                                DocumentSnapshot snapshot = change.getDocument();
+                                Momo item = snapshot.toObject(Momo.class);
 
+                                items.add(change.getNewIndex(), item);
                             }
-                            items.add(item);
+
+                            // TODO: Handle REMOVED and MODIFIED and MOVED events
                         }
+
                         lstMomo.setAdapter(new MomoFeedAdapter(items));
                      }
                 });

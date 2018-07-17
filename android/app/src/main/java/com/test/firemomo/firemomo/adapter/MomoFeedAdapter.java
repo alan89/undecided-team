@@ -41,16 +41,14 @@ public class MomoFeedAdapter extends RecyclerView.Adapter<MomoViewHolder> {
   public void onBindViewHolder(MomoViewHolder holder, int position) {
     Momo momo = lstMomo.get(position);
 
-    String dateString = DATE_FORMAT.format(momo.getTimeStamp());
-
-    holder.txtUser.setText(momo.getUsrName());
-    holder.txtTime.setText(dateString);
+    holder.txtUser.setText(momo.getUserName());
+    holder.txtTime.setText(DATE_FORMAT.format(momo.getCreatedAt()));
     holder.txtTitle.setText(momo.getTitle());
-    holder.buttonLikes.setText(momo.getLikes());
-    holder.buttonComments.setText(momo.getCommentCount());
+    holder.buttonLikes.setText(String.valueOf(momo.getLikesCount()));
+    holder.buttonComments.setText(String.valueOf(momo.getCommentCount()));
 
     Glide.with(holder.momoImage)
-            .load(momo.getImageURL())
+            .load(momo.getImageUrl())
             .apply(RequestOptions.placeholderOf(R.drawable.gray))
             .into(holder.momoImage);
   }
