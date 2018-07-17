@@ -11,7 +11,20 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('src/js/app.js', 'dist/').sass('src/sass/app.scss', 'dist/');
+mix.js('src/js/app.js', 'public/dist/app.js')
+    .sass('src/sass/app.scss', 'public/dist/app.css')
+    .then(() => {
+        // :: Deploy to Firebase Hosting
+        console.log("Deploying to Firebase Hosting...")
+        /*var exec = require('exec');
+        exec('firebase deploy', (err, out, code) => {
+            if (err instanceof Error) {
+                console.log(err)
+                return
+            }
+            console.log(out)
+        });*/
+    });
 
 // Full API
 // mix.js(src, output);
