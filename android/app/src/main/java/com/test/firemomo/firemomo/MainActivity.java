@@ -1,14 +1,14 @@
 package com.test.firemomo.firemomo;
 
 import android.content.Intent;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -20,10 +20,9 @@ import com.test.firemomo.firemomo.adapter.MomoFeedAdapter;
 import com.test.firemomo.firemomo.models.Momo;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private Button goFast;
+    private FloatingActionButton goFast;
     private Intent goCam;
     private RecyclerView lstMomo;
     ArrayList<Momo> items = new ArrayList<>();
@@ -35,21 +34,17 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        lstMomo = (RecyclerView) findViewById(R.id.lstMomo);
-
-        goFast= findViewById(R.id.go_fast);
+        lstMomo = findViewById(R.id.lstMomo);
+        goFast = findViewById(R.id.go_fast);
 
         goFast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goCam=new Intent(MainActivity.this, MomoCam.class);
+                goCam = new Intent(MainActivity.this, MomoCam.class);
                 startActivity(goCam);
             }
         });
 
-
-
-        ///
         db.collection("posts")
 
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {

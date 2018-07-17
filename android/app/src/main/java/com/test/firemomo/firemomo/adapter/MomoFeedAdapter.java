@@ -44,8 +44,8 @@ public class MomoFeedAdapter extends RecyclerView.Adapter<MomoViewHolder>  {
             holder.txtUser.setText(lstMomo.get(position).getUsrName());
             holder.txtTime.setText(lstMomo.get(position).getTimeStamp());
             holder.txtTitle.setText(lstMomo.get(position).getTitle());
-            holder.txtLikes.setText(lstMomo.get(position).getLikes());
-            holder.txtComments.setText(lstMomo.get(position).getCommentCount());
+            holder.buttonLikes.setText(lstMomo.get(position).getLikes());
+            holder.buttonComments.setText(lstMomo.get(position).getCommentCount());
             holder.momoImage.setTag(lstMomo.get(position).getImageURL());
             new DownloadImagesTask().execute(holder.momoImage);
     }
