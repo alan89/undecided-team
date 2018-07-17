@@ -1,33 +1,35 @@
 <template>
     <v-container grid-list-md>
         <v-subheader>
-            Momo List
+            Trending Momos
         </v-subheader>
         <v-layout row wrap>
             <v-flex v-for="momo in momos" :key="momo.id" xs12 sm6 md4 align-start>
-                <v-card>
+                <v-card height="335">
                     <a href="#" @click.prevent="goToMomo(momo.id)">
-                        <v-card-media contain class="white--text" :src="momo.imageUrl" height="180"></v-card-media>
+                        <v-card-media contain class="white--text" :src="momo.imageUrl" height="200"></v-card-media>
                     </a>
                     <v-card-title>
-                        <span class="grey--text">{{ momo.title }}</span>
-                        <br/><br/>
-                        <span>
-                            <small>by <b>{{ momo.userName }}</b></small>
-                        </span>
-                        <v-badge right>
-                            <span slot="badge">{{ Object.keys(momo.likes).length }}</span>
-                            <v-icon small color="grey lighten-1">
-                                thumb_up
-                            </v-icon>
-                        </v-badge>
-
-                        <v-badge right>
-                            <span slot="badge">{{ momo.commentCount }}</span>
-                            <v-icon small color="grey lighten-1">
-                                comment
-                            </v-icon>
-                        </v-badge>
+                        <div>
+                            <span class="grey--text">{{ momo.title }}</span>
+                            <br/>
+                            <span>
+                                <small>by <b>{{ momo.userName }}</b></small>
+                            </span>
+                            <v-container grid-list-md text-xs-center>
+                                <v-layout row wrap>
+                                    <v-flex xs6>
+                                        <like-button :momo.sync="momo"></like-button>
+                                    </v-flex>
+                                    <v-flex xs6>
+                                        <v-btn small color="info" class="white--text">
+                                            {{ momo.commentCount }}
+                                            <v-icon right dark>comment</v-icon>
+                                        </v-btn>
+                                    </v-flex>
+                                </v-layout>
+                            </v-container>
+                        </div>
                     </v-card-title>
                 </v-card>
             </v-flex>
@@ -39,12 +41,17 @@
 </template>
 
 <script>
+    import LikeButton from './LikeButton'
+
     let db
     export default {
         data() {
             return {
                 momos: []
             }
+        },
+        components: {
+            LikeButton
         },
         created() {
             db = firebase.firestore()
@@ -57,6 +64,20 @@
                         let data = doc.data()
                         data.id = doc.id
                         this.momos.push(data)
+
+                        // :: Listen for realtime updates
+                        db.collection('posts').doc(doc.id).onSnapshot(snapshot => {
+
+                            let newData = snapshot.data()
+                            newData.id = snapshot.id
+                            let foundIndex = this.momos.findIndex(momo => {
+                                return momo.id === newData.id
+                            })
+                            if (foundIndex > -1) {
+                                this.$set(this.momos, foundIndex, newData)
+                            }
+                        })
+
                     });
                 });
             },

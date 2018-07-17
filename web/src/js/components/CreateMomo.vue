@@ -56,10 +56,14 @@
             },
             onSubmit() {
                 if (this.title == '') {
-                    return alert('The title is required')
+                    this.$root.snackbarText = 'The title is required'
+                    this.$root.snackbar = true
+                    return
                 }
                 if (this.image == '') {
-                    alert('The image is required')
+                    this.$root.snackbarText = 'The image is required'
+                    this.$root.snackbar = true
+                    return
                 }
                 this.loading = true
                 let storage = firebase.storage()
@@ -72,7 +76,7 @@
                         db.collection("posts").add({
                             commentCount: 0,
                             likesCount: 0,
-                            createdAt: "2018-07-16T14:00:00.000Z",
+                            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
                             imageUrl: url,
                             likes: {},
                             tags: {},
@@ -84,13 +88,16 @@
                             this.loading = false
                             this.image = ''
                             this.title = ''
-                            alert("Your Momo has been successfully uploaded! :D")
+                            this.$root.snackbarText = 'Your Momo has been successfully uploaded! :D'
+                            this.$root.snackbar = true
+                            this.$router.push({name: 'momos'})
                         })
                     })
                 }).catch(err => {
                     console.log(err)
                     this.loading = false
-                    alert("Whoops! Something went wrong while uploading your Momo. Please try again..")
+                    this.$root.snackbarText = 'Whoops! Something went wrong while uploading your Momo. Please try again...'
+                    this.$root.snackbar = true
                 })
             }
         }
