@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         db.collection("posts")
-
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value,
@@ -56,12 +55,12 @@ public class MainActivity extends AppCompatActivity {
                             return;
                         }
 
-
+                        // TODO: Avoid double-adding items by going with DocumentChanges
                         for (QueryDocumentSnapshot doc : value) {
                             Momo item = new Momo();
                             if (doc.get("title") != null) {
                                 item.setImageURL(doc.getString("imageUrl"));
-                                item.setTimeStamp(doc.get("createdAt").toString());
+                                item.setTimeStamp(doc.getDate("createdAt"));
                                 item.setLikes(doc.get("likesCount").toString());
                                 item.setTitle(doc.getString("title"));
                                 item.setMomoId(doc.getString("id"));

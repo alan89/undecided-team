@@ -1,8 +1,10 @@
 package com.test.firemomo.firemomo.models;
 
+import java.util.Date;
+
 public class Momo {
     private String imageURL;
-    private String timeStamp;
+    private Date timeStamp;
     private String likes;
     private String title;
     private String usrName;
@@ -26,11 +28,11 @@ public class Momo {
         this.imageURL = imageURL;
     }
 
-    public String getTimeStamp() {
+    public Date getTimeStamp() {
         return timeStamp;
     }
 
-    public void setTimeStamp(String timeStamp) {
+    public void setTimeStamp(Date timeStamp) {
         this.timeStamp = timeStamp;
     }
 

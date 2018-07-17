@@ -1,90 +1,62 @@
 package com.test.firemomo.firemomo.adapter;
 
-
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.test.firemomo.firemomo.R;
 import com.test.firemomo.firemomo.adapter.views.MomoViewHolder;
 import com.test.firemomo.firemomo.models.Momo;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
-public class MomoFeedAdapter extends RecyclerView.Adapter<MomoViewHolder>  {
-    private List<Momo> lstMomo = Collections.EMPTY_LIST;
+public class MomoFeedAdapter extends RecyclerView.Adapter<MomoViewHolder> {
 
+  private static final SimpleDateFormat DATE_FORMAT =
+      new SimpleDateFormat("MM/dd", Locale.getDefault());
 
-    public MomoFeedAdapter(List<Momo> lstMenu ){
-       this.lstMomo=lstMenu;
+  private List<Momo> lstMomo = Collections.EMPTY_LIST;
 
-    }
-    @Override
-    public MomoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.momo_feed_item, parent, false);
+  public MomoFeedAdapter(List<Momo> lstMenu) {
+    this.lstMomo = lstMenu;
+  }
 
-        MomoViewHolder vh = new MomoViewHolder(v);
+  @Override
+  public MomoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    View v =
+        LayoutInflater.from(parent.getContext()).inflate(R.layout.momo_feed_item, parent, false);
 
+    MomoViewHolder vh = new MomoViewHolder(v);
 
-        return vh;
-    }
+    return vh;
+  }
 
-    @Override
-    public void onBindViewHolder( MomoViewHolder holder, int position) {
-            holder.txtUser.setText(lstMomo.get(position).getUsrName());
-            holder.txtTime.setText(lstMomo.get(position).getTimeStamp());
-            holder.txtTitle.setText(lstMomo.get(position).getTitle());
-            holder.buttonLikes.setText(lstMomo.get(position).getLikes());
-            holder.buttonComments.setText(lstMomo.get(position).getCommentCount());
-            holder.momoImage.setTag(lstMomo.get(position).getImageURL());
-            new DownloadImagesTask().execute(holder.momoImage);
-    }
+  @Override
+  public void onBindViewHolder(MomoViewHolder holder, int position) {
+    Momo momo = lstMomo.get(position);
 
-     @Override
-    public int getItemCount() {
-        return  lstMomo.size();
-    }
+    String dateString = DATE_FORMAT.format(momo.getTimeStamp());
 
+    holder.txtUser.setText(momo.getUsrName());
+    holder.txtTime.setText(dateString);
+    holder.txtTitle.setText(momo.getTitle());
+    holder.buttonLikes.setText(momo.getLikes());
+    holder.buttonComments.setText(momo.getCommentCount());
 
-    public class DownloadImagesTask extends AsyncTask<ImageView, Void, Bitmap> {
+    Glide.with(holder.momoImage)
+            .load(momo.getImageURL())
+            .apply(RequestOptions.placeholderOf(R.drawable.gray))
+            .into(holder.momoImage);
+  }
 
-        ImageView imageView = null;
-
-        @Override
-        protected Bitmap doInBackground(ImageView... imageViews) {
-            this.imageView = imageViews[0];
-            return download_Image((String)imageView.getTag());
-        }
-
-        @Override
-        protected void onPostExecute(Bitmap result) {
-            imageView.setImageBitmap(result);
-        }
-
-
-        private Bitmap download_Image(String src) {
-            try {
-                URL url = new URL(src);
-                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                connection.setDoInput(true);
-                connection.connect();
-                InputStream input = connection.getInputStream();
-                Bitmap myBitmap = BitmapFactory.decodeStream(input);
-                return myBitmap;
-            } catch (IOException e) {
-                // Log exception
-                return null;
-            }
-        }
-    }
+  @Override
+  public int getItemCount() {
+    return lstMomo.size();
+  }
 }
