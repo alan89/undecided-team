@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // TODO: order by timestamp, limit the query to 50 or 100 items
         db.collection("posts")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
