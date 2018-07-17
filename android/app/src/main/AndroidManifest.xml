@@ -15,12 +15,18 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity android:name=".MainActivity">
+
+        </activity>
+
+        <activity android:name="com.test.firemomo.firemomo.auth.ChooserActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.test.firemomo.firemomo.auth.FacebookLoginActivity"></activity>
+        <activity android:name="com.test.firemomo.firemomo.auth.GoogleSignInActivity"></activity>
 
         <activity android:name="com.test.firemomo.firemomo.MomoGen.MomoCam"></activity>
 
