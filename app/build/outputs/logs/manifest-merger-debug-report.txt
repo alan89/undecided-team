@@ -1,0 +1,151 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:2:1-21:12
+MERGED from [com.android.support:appcompat-v7:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0-alpha3.aar/4f5fc588bbbce1f270abf3d7ba63f71e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/55b663079bc5a39eba41690f73f502bb/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0-alpha3.aar/85e723cfc80a0bb6b57bb877a7ccf96f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0-alpha3.aar/2444b008a24e16d628ba1d1ca0b91088/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0-alpha3.aar/7d8d383bc62e4f46ca16079e7f9200f5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0-alpha3.aar/c44dd2f42cc9c032395a7a87f719c39f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0-alpha3.aar/18dd01ec6c0cfded57f5f2abd7ad0637/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/loader-28.0.0-alpha3.aar/26f96723a462ca5cfbacd9e3e7c8834c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0-alpha3.aar/817fbeca95c98bf1ac437f48ec9a4bd3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0-alpha3.aar/10875b2df33e7529cd0b085237a9eed0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0-alpha3.aar/47399017eadc750c761905d71ab3f9bf/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0-alpha3.aar/65b438c7c0fc545c8b66be47864f90e0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/customview-28.0.0-alpha3.aar/4a47e5d91e9360c8546506666731d53e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0-alpha3.aar/5d40ef709c08db47c11d0f9352a2b03e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0-alpha3.aar/866058a7fe2695013e6d3560d9ee3d8a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-alpha3.aar/63371fbe0c7abc3a28d1bbd16632a05b/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:cursoradapter:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0-alpha3.aar/31babf8d9c0004ea4df931fe940c7b9b/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/78fa60e094ccbc2967d0696842fdb2cb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:versionedparcelable:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0-alpha3.aar/8e56d43ab1256a0c51e6b890f99d9da3/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:documentfile:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0-alpha3.aar/54f8f624ee7289bdb0be9da78dca1b64/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0-alpha3.aar/a639de0070d0aac827134cc4dd384092/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/print-28.0.0-alpha3.aar/55006ed30d26bd01299ad3d9edb8c3a1/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/9986a605f08c1c5bd81e25d8cee33dcd/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/3068754f0f229d8be2cf6ee2b0903092/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/5c1388ead6cd91415d01d947542bd6f7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0-alpha3.aar/fe62af9fb6a5f348668deace6fb275f6/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:2:1-21:12
+	package
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:3:5-41
+		INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:2:1-21:12
+		INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:2:1-21:12
+		INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:5:5-19:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/55b663079bc5a39eba41690f73f502bb/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/55b663079bc5a39eba41690f73f502bb/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-alpha3.aar/63371fbe0c7abc3a28d1bbd16632a05b/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-alpha3.aar/63371fbe0c7abc3a28d1bbd16632a05b/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0-alpha3.aar/8e56d43ab1256a0c51e6b890f99d9da3/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0-alpha3.aar/8e56d43ab1256a0c51e6b890f99d9da3/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-alpha3.aar/63371fbe0c7abc3a28d1bbd16632a05b/AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:11:9-40
+activity#com.test.firemomo.firemomo.MainActivity
+ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:12:9-18:20
+	android:name
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:12:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml:16:27-74
+uses-sdk
+INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0-alpha3.aar/4f5fc588bbbce1f270abf3d7ba63f71e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0-alpha3.aar/4f5fc588bbbce1f270abf3d7ba63f71e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/55b663079bc5a39eba41690f73f502bb/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/55b663079bc5a39eba41690f73f502bb/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0-alpha3.aar/85e723cfc80a0bb6b57bb877a7ccf96f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0-alpha3.aar/85e723cfc80a0bb6b57bb877a7ccf96f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0-alpha3.aar/2444b008a24e16d628ba1d1ca0b91088/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0-alpha3.aar/2444b008a24e16d628ba1d1ca0b91088/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0-alpha3.aar/7d8d383bc62e4f46ca16079e7f9200f5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0-alpha3.aar/7d8d383bc62e4f46ca16079e7f9200f5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0-alpha3.aar/c44dd2f42cc9c032395a7a87f719c39f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0-alpha3.aar/c44dd2f42cc9c032395a7a87f719c39f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0-alpha3.aar/18dd01ec6c0cfded57f5f2abd7ad0637/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0-alpha3.aar/18dd01ec6c0cfded57f5f2abd7ad0637/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/loader-28.0.0-alpha3.aar/26f96723a462ca5cfbacd9e3e7c8834c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/loader-28.0.0-alpha3.aar/26f96723a462ca5cfbacd9e3e7c8834c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0-alpha3.aar/817fbeca95c98bf1ac437f48ec9a4bd3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0-alpha3.aar/817fbeca95c98bf1ac437f48ec9a4bd3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0-alpha3.aar/10875b2df33e7529cd0b085237a9eed0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0-alpha3.aar/10875b2df33e7529cd0b085237a9eed0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0-alpha3.aar/47399017eadc750c761905d71ab3f9bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0-alpha3.aar/47399017eadc750c761905d71ab3f9bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0-alpha3.aar/65b438c7c0fc545c8b66be47864f90e0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0-alpha3.aar/65b438c7c0fc545c8b66be47864f90e0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/customview-28.0.0-alpha3.aar/4a47e5d91e9360c8546506666731d53e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/customview-28.0.0-alpha3.aar/4a47e5d91e9360c8546506666731d53e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0-alpha3.aar/5d40ef709c08db47c11d0f9352a2b03e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0-alpha3.aar/5d40ef709c08db47c11d0f9352a2b03e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0-alpha3.aar/866058a7fe2695013e6d3560d9ee3d8a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0-alpha3.aar/866058a7fe2695013e6d3560d9ee3d8a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-alpha3.aar/63371fbe0c7abc3a28d1bbd16632a05b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0-alpha3.aar/63371fbe0c7abc3a28d1bbd16632a05b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0-alpha3.aar/31babf8d9c0004ea4df931fe940c7b9b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0-alpha3.aar/31babf8d9c0004ea4df931fe940c7b9b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/78fa60e094ccbc2967d0696842fdb2cb/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/78fa60e094ccbc2967d0696842fdb2cb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0-alpha3.aar/8e56d43ab1256a0c51e6b890f99d9da3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0-alpha3.aar/8e56d43ab1256a0c51e6b890f99d9da3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0-alpha3.aar/54f8f624ee7289bdb0be9da78dca1b64/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0-alpha3.aar/54f8f624ee7289bdb0be9da78dca1b64/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0-alpha3.aar/a639de0070d0aac827134cc4dd384092/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0-alpha3.aar/a639de0070d0aac827134cc4dd384092/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/print-28.0.0-alpha3.aar/55006ed30d26bd01299ad3d9edb8c3a1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/print-28.0.0-alpha3.aar/55006ed30d26bd01299ad3d9edb8c3a1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/9986a605f08c1c5bd81e25d8cee33dcd/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/9986a605f08c1c5bd81e25d8cee33dcd/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/3068754f0f229d8be2cf6ee2b0903092/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/3068754f0f229d8be2cf6ee2b0903092/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/5c1388ead6cd91415d01d947542bd6f7/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/5c1388ead6cd91415d01d947542bd6f7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0-alpha3.aar/fe62af9fb6a5f348668deace6fb275f6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0-alpha3] /Users/josedejesusa/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0-alpha3.aar/fe62af9fb6a5f348668deace6fb275f6/AndroidManifest.xml:20:5-44
+INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+		ADDED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/josedejesusa/Documents/Firemomo/app/src/main/AndroidManifest.xml

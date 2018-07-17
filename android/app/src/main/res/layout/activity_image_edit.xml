@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".ImageEdit">
+
+    <FrameLayout
+        android:id="@+id/image_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/drake_template" />
+
+        <EditText
+            android:id="@+id/text_top"
+            style="@style/AppTheme.MomoText.Editable"
+            android:layout_gravity="top"
+            tools:text="Top Text"
+            tools:visibility="visible" />
+
+        <EditText
+            android:id="@+id/text_bottom"
+            style="@style/AppTheme.MomoText.Editable"
+            android:layout_gravity="bottom"
+            tools:text="Bottom Text"
+            tools:visibility="visible" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#32000000"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/button_add_text_top"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_text_format_white_24dp"
+            android:text="Top"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button_add_text_bottom"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_text_format_white_24dp"
+            android:text="Bottom"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button_done"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_done_white_24dp"
+            android:text="Done"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
