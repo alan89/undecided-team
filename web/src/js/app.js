@@ -2,6 +2,8 @@ require('./bootstrap')
 
 window.Vue = require('vue')
 
+window.bus = new Vue()
+
 
 // :: Vue Router
 
@@ -26,14 +28,13 @@ const app = new Vue({
     data: () => ({
         drawer: false,
         user: false,
+        snackbar: false,
+        snackbarText: ''
     }),
     props: {
         source: String
     },
     el: '#app',
-    /*
-     * Initialize Firebase when app is created
-     */
     created() {
         let config = {
             apiKey: "AIzaSyBLgsN1hYT92sr-hMFq_xsgJhJLU1ZtXq4",
@@ -46,7 +47,6 @@ const app = new Vue({
         firebase.initializeApp(config);
     },
     mounted() {
-
         /*
          * Listen to auth state events
          */
@@ -69,6 +69,12 @@ const app = new Vue({
         }, (error) => {
             console.log(error);
         });
+
+        bus.$off('showSnackbar')
+        bus.$on('showSnackbar', text => {
+            this.snackbarText = text
+            this.snackbar = true
+        })
     },
     methods: {
         logout() {

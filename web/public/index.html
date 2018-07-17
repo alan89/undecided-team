@@ -11,6 +11,12 @@
 <body>
 <div id="app">
     <v-app id="inspire">
+        <v-snackbar v-model="snackbar" :timeout="6000" :top="true">
+            {{ snackbarText }}
+            <v-btn color="pink" flat @click="snackbar = false">
+                Close
+            </v-btn>
+        </v-snackbar>
         <v-navigation-drawer v-model="drawer" fixed app>
             <v-list dense>
                 <v-list-tile v-if="user !== false">
