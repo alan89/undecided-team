@@ -14,5 +14,10 @@ target 'firemomo' do
   pod 'Firebase/Storage'
   pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
+  
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Google'
+  pod 'FirebaseUI/Facebook'
+  pod 'FirebaseUI/Phone'
 
 end

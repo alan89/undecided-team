@@ -1,3 +1,47 @@
 <resources>
-    <string name="app_name">Firemomo</string>
+    <string name="app_name">FireMomo</string>
+
+    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
+    <string name="facebook_application_id" translatable="false">1824346467654697</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb1824346467654697</string>
+    <!-- Twitter consumer key and secret -->
+
+    <string name="label_google_sign_in">Firebase + Google Sign In</string>
+    <string name="desc_google_sign_in">Use a Google Sign In credential to authenticate with Firebase.</string>
+
+    <string name="label_facebook_login">Firebase + Facebook Login</string>
+    <string name="desc_facebook_login">Use a Facebook Login credential to authenticate with Firebase.</string>
+    <string name="google_status_fmt">Google User: %s</string>
+    <string name="google_title_text">Google Sign In</string>
+    <string name="hint_user_id">User ID</string>
+    <string name="get_custom_token">Get Token</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create Account</string>
+    <string name="send_link">Send Link</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="verify_email">Verify Email</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="loading">Loading…</string>
+    <string name="custom_token">Custom Token</string>
+    <string name="signed_in">Signed In</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="token_null">Token: null</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="desc_firebase_lockup">Firebase logo and name</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="start_phone_auth">Start</string>
+    <string name="verify_phone_auth">Verify</string>
+    <string name="resend_phone_auth">Resend</string>
+    <string name="hint_phone_number">Phone Number</string>
+    <string name="hint_verification_code">Verification Code</string>
+    <string name="status_code_sent">Code Sent</string>
+    <string name="status_verification_failed">Verification failed</string>
+    <string name="status_verification_succeeded">Verification succeeded</string>
+    <string name="status_sign_in_failed">Sign-in failed</string>
+    <string name="instant_validation">(instant validation)</string>
+    <string name="firebase_status_fmt">Firebase User: %s</string>
+    <string name="firebase_user_management">Firebase User Management</string>
+    <string name="facebook_status_fmt">Facebook User: %s</string>
+    <string name="facebook_title_text">Facebook Login</string>
 </resources>

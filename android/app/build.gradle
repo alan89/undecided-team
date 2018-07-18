@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -37,5 +38,17 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation 'com.google.firebase:firebase-storage:16.0.1'
+    implementation 'com.google.firebase:firebase-firestore:17.0.2'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'com.firebaseui:firebase-ui-auth:4.0.0'
+
+    // Required only if Facebook login support is required
+    // Find the latest Facebook SDK releases here: https://goo.gl/Ce5L94
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+    implementation 'com.android.support:multidex:1.0.3'
+
 }
 apply plugin: 'com.google.gms.google-services'

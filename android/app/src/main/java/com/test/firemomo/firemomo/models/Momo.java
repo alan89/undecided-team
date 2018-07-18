@@ -3,45 +3,46 @@ package com.test.firemomo.firemomo.models;
 import java.util.Date;
 
 public class Momo {
-    private String imageURL;
-    private Date timeStamp;
-    private String likes;
+    private String id;
     private String title;
-    private String usrName;
-    private String momoId;
+    private String userName;
+    private String imageUrl;
 
-    public String getCommentCount() {
+    private int likesCount;
+    private int commentCount;
+
+    private Date createdAt;
+
+    public int getCommentCount() {
         return commentCount;
     }
 
-    public void setCommentCount(String commentCount) {
+    public void setCommentCount(int commentCount) {
         this.commentCount = commentCount;
     }
 
-    private String commentCount;
-
-    public String getImageURL() {
-        return imageURL;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
-    public Date getTimeStamp() {
-        return timeStamp;
+    public Date getCreatedAt() {
+        return createdAt;
     }
 
-    public void setTimeStamp(Date timeStamp) {
-        this.timeStamp = timeStamp;
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 
-    public String getLikes() {
-        return likes;
+    public int getLikesCount() {
+        return likesCount;
     }
 
-    public void setLikes(String likes) {
-        this.likes = likes;
+    public void setLikesCount(int likesCount) {
+        this.likesCount = likesCount;
     }
 
     public String getTitle() {
@@ -52,20 +53,20 @@ public class Momo {
         this.title = title;
     }
 
-    public String getUsrName() {
-        return usrName;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsrName(String usrName) {
-        this.usrName = usrName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getMomoId() {
-        return momoId;
+    public String getId() {
+        return id;
     }
 
-    public void setMomoId(String momoId) {
-        this.momoId = momoId;
+    public void setId(String id) {
+        this.id = id;
     }
 
 
