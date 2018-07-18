@@ -3,7 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.test.firemomo.firemomo">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -14,26 +18,32 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".MainActivity">
-
-        </activity>
-
-        <activity android:name="com.test.firemomo.firemomo.auth.ChooserActivity">
+        <activity android:name=".auth.ChooserActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.test.firemomo.firemomo.auth.FacebookLoginActivity"></activity>
-        <activity android:name="com.test.firemomo.firemomo.auth.GoogleSignInActivity"></activity>
 
-        <activity android:name="com.test.firemomo.firemomo.MomoGen.MomoCam"></activity>
+        <activity android:name=".auth.FacebookLoginActivity">
+            <!-- none -->
+        </activity>
+
+        <activity android:name=".auth.GoogleSignInActivity">
+            <!-- none -->
+        </activity>
+
+        <activity android:name=".MainActivity">
+            <!-- none -->
+        </activity>
+
+        <activity android:name=".momogen.MomoCam">
+            <!-- none -->
+        </activity>
 
         <activity android:name=".ImageEdit">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
+            <!-- none -->
         </activity>
 
         <provider
@@ -48,10 +58,4 @@
         </provider>
 
     </application>
-
-    <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
-    <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 </manifest>

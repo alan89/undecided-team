@@ -17,7 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.test.firemomo.firemomo.MomoGen.MomoCam;
+import com.test.firemomo.firemomo.momogen.MomoCam;
 import com.test.firemomo.firemomo.adapter.MomoFeedAdapter;
 import com.test.firemomo.firemomo.models.Momo;
 

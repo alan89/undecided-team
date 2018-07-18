@@ -1,4 +1,4 @@
-package com.test.firemomo.firemomo.MomoGen;
+package com.test.firemomo.firemomo.momogen;
 
 import android.Manifest;
 import android.app.ProgressDialog;
