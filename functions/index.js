@@ -23,9 +23,7 @@ exports.blurOffensiveImages = functions.storage.object().onFinalize((object) => 
   const vision = require('@google-cloud/vision');
   const client = new vision.ImageAnnotatorClient();
   const bucket = gcs.bucket(object.bucket);
-  console.log(bucket);
   const file = bucket.file(object.name);
-  console.log(file);
 
   // Check the image content using the Cloud Vision API.
   return client.safeSearchDetection(`gs://${bucket.name}/${file.name}`)
@@ -34,7 +32,9 @@ exports.blurOffensiveImages = functions.storage.object().onFinalize((object) => 
     console.log('SafeSearch results on image', safeSearch);
 
     if (safeSearch.safeSearchAnnotation.violence == 'VERY_LIKELY' ||
-        safeSearch.safeSearchAnnotation.adult == 'VERY_LIKELY') {
+        safeSearch.safeSearchAnnotation.violence == 'POSSIBLE' ||
+        safeSearch.safeSearchAnnotation.adult == 'VERY_LIKELY' ||
+        safeSearch.safeSearchAnnotation.adult == 'POSSIBLE') {
       return blurImage(object.name, object.bucket, object.metadata);
     }
     return null;
