@@ -33,7 +33,8 @@ exports.blurOffensiveImages = functions.storage.object().onFinalize((object) => 
     const safeSearch = data[0];
     console.log('SafeSearch results on image', safeSearch);
 
-    if (safeSearch.safeSearchAnnotation.spoof == 'VERY_LIKELY') {
+    if (safeSearch.safeSearchAnnotation.violence == 'VERY_LIKELY' ||
+        safeSearch.safeSearchAnnotation.adult == 'VERY_LIKELY') {
       return blurImage(object.name, object.bucket, object.metadata);
     }
     return null;
