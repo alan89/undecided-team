@@ -1,5 +1,5 @@
 <template>
-    <v-btn small color="blue-grey" class="white--text" @click.prevent="toggleLike" :loading="loading">
+    <v-btn flat color="blue-grey" class="white--text" @click.prevent="toggleLike" :loading="loading">
         {{ momo.likesCount }}
         <v-icon right dark>thumb_up</v-icon>
     </v-btn>

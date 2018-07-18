@@ -13,9 +13,9 @@
             ></v-text-field>
             <picture-input
                     ref="pictureInput"
-                    width="200"
-                    height="200"
-                    accept="image/jpeg,image/png"
+                    width="230"
+                    height="230"
+                    accept="image/*"
                     size="10"
                     button-class="btn"
                     :custom-strings="{
@@ -41,9 +41,6 @@
         },
         components: {
             PictureInput
-        },
-        mounted() {
-            console.log("On momo crearte!")
         },
         methods: {
             onChange(image) {
