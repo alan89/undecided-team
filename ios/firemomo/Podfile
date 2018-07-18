@@ -19,5 +19,7 @@ target 'firemomo' do
   pod 'FirebaseUI/Google'
   pod 'FirebaseUI/Facebook'
   pod 'FirebaseUI/Phone'
+  
+  pod 'MaterialComponents'
 
 end

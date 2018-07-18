@@ -15,6 +15,8 @@
 		F8388ECA20FD46C800F45980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8388EC920FD46C800F45980 /* Assets.xcassets */; };
 		F8388ECD20FD46C800F45980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8388ECB20FD46C800F45980 /* LaunchScreen.storyboard */; };
 		F8388ED520FD472B00F45980 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8388ED420FD472B00F45980 /* GoogleService-Info.plist */; };
+		F88084B220FFEC1D00E5F0BF /* cardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88084B020FFEC1D00E5F0BF /* cardCell.swift */; };
+		F88084B320FFEC1D00E5F0BF /* cardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F88084B120FFEC1D00E5F0BF /* cardCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		F8388ECC20FD46C800F45980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8388ECE20FD46C800F45980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8388ED420FD472B00F45980 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F88084B020FFEC1D00E5F0BF /* cardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardCell.swift; sourceTree = "<group>"; };
+		F88084B120FFEC1D00E5F0BF /* cardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cardCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,16 +86,42 @@
 		F8388EC120FD46C800F45980 /* firemomo */ = {
 			isa = PBXGroup;
 			children = (
+				F88084B420FFF51F00E5F0BF /* Extensions */,
+				F88084AC20FFEB8600E5F0BF /* CellControllers */,
+				F88084AB20FFEB4700E5F0BF /* ViewControllers */,
 				F8388ED420FD472B00F45980 /* GoogleService-Info.plist */,
 				F8388EC220FD46C800F45980 /* AppDelegate.swift */,
-				F8388EC420FD46C800F45980 /* ViewController.swift */,
 				F8388EC620FD46C800F45980 /* Main.storyboard */,
 				F8388EC920FD46C800F45980 /* Assets.xcassets */,
 				F8388ECB20FD46C800F45980 /* LaunchScreen.storyboard */,
 				F8388ECE20FD46C800F45980 /* Info.plist */,
-				C1CDFD6420FDBDCE00F57119 /* FUIAuthExtension.swift */,
 			);
 			path = firemomo;
+			sourceTree = "<group>";
+		};
+		F88084AB20FFEB4700E5F0BF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F8388EC420FD46C800F45980 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F88084AC20FFEB8600E5F0BF /* CellControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F88084B020FFEC1D00E5F0BF /* cardCell.swift */,
+				F88084B120FFEC1D00E5F0BF /* cardCell.xib */,
+			);
+			path = CellControllers;
+			sourceTree = "<group>";
+		};
+		F88084B420FFF51F00E5F0BF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C1CDFD6420FDBDCE00F57119 /* FUIAuthExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +188,7 @@
 				F8388ECD20FD46C800F45980 /* LaunchScreen.storyboard in Resources */,
 				F8388ED520FD472B00F45980 /* GoogleService-Info.plist in Resources */,
 				F8388ECA20FD46C800F45980 /* Assets.xcassets in Resources */,
+				F88084B320FFEC1D00E5F0BF /* cardCell.xib in Resources */,
 				F8388EC820FD46C800F45980 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +253,12 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -234,6 +271,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -253,6 +296,7 @@
 				C1CDFD6520FDBDCE00F57119 /* FUIAuthExtension.swift in Sources */,
 				F8388EC520FD46C800F45980 /* ViewController.swift in Sources */,
 				F8388EC320FD46C800F45980 /* AppDelegate.swift in Sources */,
+				F88084B220FFEC1D00E5F0BF /* cardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4JG6YQBPS4;
 				INFOPLIST_FILE = firemomo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -406,7 +451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.epam.firemomo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -416,6 +461,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4JG6YQBPS4;
 				INFOPLIST_FILE = firemomo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -424,7 +470,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.epam.firemomo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
