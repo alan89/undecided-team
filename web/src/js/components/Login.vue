@@ -1,5 +1,5 @@
 <template>
-    <v-flex text-xs-center>
+    <v-flex text-xs-center centered full-width full-height>
         <h2>Welcome to FireMomo</h2>
         <p>Please sign in to begin browsing the biggest meme collection on the Internet...</p>
         <div id="firebaseui-auth-container"></div>
@@ -20,7 +20,6 @@
                 tosUrl: 'https://google.com',
                 callbacks: {
                     signInSuccessWithAuthResult: (authResult, redirectUrl) => {
-                        console.log(authResult.user)
                         ui.delete()
                         this.$router.push({name: 'momos'})
                     },

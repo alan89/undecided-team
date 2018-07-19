@@ -22,14 +22,14 @@ const routes = [
         name: 'momos'
     },
     {
-        path: '/momos/:id',
-        component: MomoDetail,
-        name: 'detail'
-    },
-    {
         path: '/momos/create',
         component: CreateMomo,
         name: 'create'
+    },
+    {
+        path: '/momos/:id',
+        component: MomoDetail,
+        name: 'detail'
     }
 ]
 

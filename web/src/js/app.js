@@ -21,16 +21,21 @@ Vue.use(Vuetify)
 
 // :: Vue Global Components
 
-//
+Vue.component('search-bar', require('./components/SearchBar'))
 
 const app = new Vue({
     router,
     data: () => ({
-        drawer: false,
         user: false,
         snackbar: false,
-        snackbarText: ''
+        snackbarText: '',
+        backButtonVisible: false
     }),
+    watch: {
+        $route(to, from) {
+            this.computeBackButtonsVisible()
+        }
+    },
     props: {
         source: String
     },
@@ -47,6 +52,9 @@ const app = new Vue({
         firebase.initializeApp(config);
     },
     mounted() {
+
+        this.computeBackButtonsVisible()
+
         /*
          * Listen to auth state events
          */
@@ -54,14 +62,11 @@ const app = new Vue({
             if (user) {
                 // :: User is signed in.
                 this.user = user
-                console.log("User is already logged in!")
                 if (this.$router.currentRoute.name === 'login') {
                     return this.$router.push({name: 'momos'})
                 }
-                return
             } else {
                 // :: User is signed out
-                console.log("User is not signed in!")
                 if (this.$router.currentRoute.name !== 'login' && this.$router.currentRoute.name !== 'register') {
                     return this.$router.push({name: 'login'})
                 }
@@ -77,11 +82,17 @@ const app = new Vue({
         })
     },
     methods: {
+        computeBackButtonsVisible() {
+            this.backButtonVisible = (this.$router.currentRoute.name === 'detail' || this.$router.currentRoute.name === 'create')
+        },
         logout() {
             firebase.auth().signOut().then(() => {
                 this.user = false
                 this.$router.push({name: 'login'})
             })
+        },
+        goBack() {
+            return this.$router.push({name: 'momos'})
         }
     }
 });

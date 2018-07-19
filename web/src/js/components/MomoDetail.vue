@@ -58,6 +58,7 @@
                     </v-toolbar>
 
                     <v-list two-line>
+                        <v-list-tile v-if="!comments.length">There are no comments yet 😕</v-list-tile>
                         <template v-for="(comment, index) in comments">
 
                             <v-list-tile :key="comment.id" avatar @click="">
@@ -67,7 +68,8 @@
                                 <v-list-tile-content>
                                     <v-list-tile-title v-html="comment.comment"></v-list-tile-title>
                                     <v-list-tile-sub-title>
-                                        {{ comment.userName }} - <small><i>{{ getTimeAgo(comment.createdAt) }}</i></small>
+                                        {{ comment.userName }} -
+                                        <small><i>{{ getTimeAgo(comment.createdAt) }}</i></small>
                                     </v-list-tile-sub-title>
                                 </v-list-tile-content>
                             </v-list-tile>
@@ -101,12 +103,10 @@
             }
         },
         created() {
-
             db = firebase.firestore()
-
             this.fetchComments()
-
-            db.collection('posts').doc(this.momoId).get().then(doc => {
+            let momoQuery = db.collection('posts').doc(this.momoId)
+            momoQuery.get().then(doc => {
                 let momo = doc.data()
                 momo.id = doc.id
                 this.momo = momo
@@ -114,14 +114,29 @@
                 console.log(err)
                 bus.$emit('showSnackbar', 'Whoops! An error occurred, please try again later...')
             })
+
+            momoQuery.onSnapshot(doc => {
+                let momo = doc.data()
+                momo.id = doc.id
+                this.momo = momo
+            })
         },
 
         methods: {
 
             fetchComments() {
-                this.comments = []
-                db.collection('posts').doc(this.momoId).collection('comments').get().then(doc => {
+                let commentsQuery = db.collection('posts').doc(this.momoId).collection('comments')
+                commentsQuery.get().then(doc => {
+                    this.comments = []
                     doc.forEach(d => {
+                        let comment = d.data()
+                        comment.id = d.id
+                        this.comments.push(comment)
+                    })
+                })
+                commentsQuery.onSnapshot(snapshot => {
+                    this.comments = []
+                    snapshot.forEach(d => {
                         let comment = d.data()
                         comment.id = d.id
                         this.comments.push(comment)
@@ -142,12 +157,28 @@
                 this.dialog = true
             },
 
+            increaseCommentCount() {
+                db.collection('posts')
+                    .doc(this.momoId)
+                    .set({commentCount: this.momo.commentCount + 1}, {merge: true}).then(() => {
+                    console.log("Comment count updated")
+                })
+            },
+
             addComment() {
+
                 if (this.commentForm.comment == '') {
                     bus.$emit('showSnackbar', 'The comment field is required')
                     return
                 }
+
+                if (this.commentForm.comment.toString().length > 150) {
+                    bus.$emit('showSnackbar', 'The comment maximum allowed size is 150 characters')
+                    return
+                }
+
                 this.loading = true
+
                 let commentPayload = {
                     comment: this.commentForm.comment,
                     createdAt: firebase.firestore.FieldValue.serverTimestamp(),
@@ -159,7 +190,7 @@
                 db.collection('posts').doc(this.momoId).collection('comments').add(commentPayload).then(createdComment => {
                     this.dialog = false
                     this.loading = false
-                    this.fetchComments()
+                    this.increaseCommentCount()
                     bus.$emit('showSnackbar', 'Your comment was added successfully!')
                 }).catch(err => {
                     console.log(err)
