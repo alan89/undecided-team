@@ -133,6 +133,9 @@
                         comment.id = d.id
                         this.comments.push(comment)
                     })
+                    this.comments.sort((a, b) => {
+                        return new Date(b.createdAt) - new Date(a.createdAt);
+                    })
                 })
                 commentsQuery.onSnapshot(snapshot => {
                     this.comments = []
@@ -140,6 +143,9 @@
                         let comment = d.data()
                         comment.id = d.id
                         this.comments.push(comment)
+                    })
+                    this.comments.sort((a, b) => {
+                        return new Date(b.createdAt) - new Date(a.createdAt);
                     })
                 })
             },
