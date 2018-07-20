@@ -8,6 +8,7 @@ target 'firemomo' do
   # Pods for firemomo
   pod 'Firebase'
   pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
   pod 'Firebase/Database'
   pod 'Firebase/Crash'
   pod 'Firebase/Auth'
@@ -21,5 +22,9 @@ target 'firemomo' do
   pod 'FirebaseUI/Phone'
   
   pod 'MaterialComponents'
+  
+  pod 'KVNProgress'
+  pod 'Colours'
+  pod 'SDWebImage'
 
 end
