@@ -1,7 +1,7 @@
 <template>
     <v-flex text-xs-center centered full-width full-height>
         <h2>Welcome to FireMomo</h2>
-        <p>Please sign in to begin browsing the biggest meme collection on the Internet...</p>
+        <p>Please sign in to start browsing the biggest meme collection on the Internet...</p>
         <div id="firebaseui-auth-container"></div>
     </v-flex>
 </template>

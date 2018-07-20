@@ -1,78 +1,102 @@
 <template>
     <v-container xs12 sm10 offset-sm1 md8 offset-md2>
+
         <v-subheader>
             Create a Momo
         </v-subheader>
-        <p class="grey--text">You are just seconds away to create a viral Momo! Please fill in the required fields
-            and let your imagination go...</p>
+
         <v-form @submit.prevent="onSubmit">
+            <v-container grid-list-xl fluid>
 
-            <v-text-field
-                    v-model="title"
-                    label="Title"
-                    required
-            ></v-text-field>
 
-            <v-layout row wrap>
-                <v-flex xs12 sm6>
-                    <v-text-field
-                            @change="redrawMeme"
-                            @keydown="redrawMeme"
-                            v-model="topText"
-                            label="Top Text"
-                            required
-                    ></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6>
-                    <v-text-field
-                            @change="redrawMeme"
-                            @keydown="redrawMeme"
-                            v-model="topFontSize"
-                            label="Font Size"
-                    ></v-text-field>
-                </v-flex>
-            </v-layout>
+                <v-layout wrap>
+                    <v-flex xs12>
+                        <p class="grey--text">You are just seconds away to create a viral Momo! Please fill in the
+                            required fields
+                            and let your imagination go...</p>
+                    </v-flex>
+                </v-layout>
 
-            <v-layout row wrap>
-                <v-flex xs12 sm6>
-                    <v-text-field
-                            @change="redrawMeme"
-                            @keydown="redrawMeme"
-                            v-model="bottomText"
-                            label="Bottom Text"
-                            required
-                    ></v-text-field>
-                </v-flex>
-                <v-flex xs12 sm6>
-                    <v-text-field
-                            @change="redrawMeme"
-                            @keydown="redrawMeme"
-                            v-model="bottomFontSize"
-                            label="Font Size"
-                    ></v-text-field>
-                </v-flex>
-            </v-layout>
+                <v-layout wrap>
+                    <v-flex xs12>
+                        <v-text-field
+                                v-model="title"
+                                label="Title"
+                                required
+                        ></v-text-field>
+                    </v-flex>
+                </v-layout>
 
-            <!-- Picture input -->
-            <picture-input
-                    v-show="image == ''"
-                    ref="pictureInput"
-                    width="235"
-                    height="235"
-                    accept="image/*"
-                    size="10"
-                    button-class="btn"
-                    :custom-strings="{
-                        drag: 'Drop your momo here 😎'
-                    }"
-                    @change="onChange">
-            </picture-input>
-            <canvas id="meme-canvas" style="display: block; margin: 0 auto; width: auto;"
-                    v-show="image != ''"></canvas>
+                <v-layout wrap>
+                    <v-flex xs12 sm6>
+                        <v-text-field
+                                @change="redrawMeme"
+                                @keydown="redrawMeme"
+                                v-model="topText"
+                                label="Top Text"
+                                required
+                        ></v-text-field>
+                    </v-flex>
+                    <v-flex xs12 sm6>
+                        <v-text-field
+                                @change="redrawMeme"
+                                @keydown="redrawMeme"
+                                v-model="topFontSize"
+                                label="Top Text Font Size"
+                        ></v-text-field>
+                    </v-flex>
+                </v-layout>
 
+                <v-layout wrap>
+                    <v-flex xs12 sm6>
+                        <v-text-field
+                                @change="redrawMeme"
+                                @keydown="redrawMeme"
+                                v-model="bottomText"
+                                label="Bottom Text Font Size"
+                                required
+                        ></v-text-field>
+                    </v-flex>
+                    <v-flex xs12 sm6>
+                        <v-text-field
+                                @change="redrawMeme"
+                                @keydown="redrawMeme"
+                                v-model="bottomFontSize"
+                                label="Font Size"
+                        ></v-text-field>
+                    </v-flex>
+                </v-layout>
+
+                <!-- Picture input -->
+                <v-layout wrap>
+                    <v-flex xs12>
+                        <picture-input
+                                v-show="image == ''"
+                                ref="pictureInput"
+                                width="235"
+                                height="235"
+                                accept="image/*"
+                                size="10"
+                                button-class="btn"
+                                :custom-strings="{
+                            drag: 'Drop your momo here 😎'
+                        }"
+                                @change="onChange">
+                        </picture-input>
+                    </v-flex>
+                </v-layout>
+
+                <v-layout wrap>
+                    <v-flex xs12>
+                        <canvas id="meme-canvas" style="display: block; margin: 0 auto; width: auto;"
+                                v-show="image != ''"></canvas>
+                    </v-flex>
+                </v-layout>
+            </v-container>
 
             <br/>
             <v-btn @click="onSubmit" :loading="loading">submit</v-btn>
+
         </v-form>
     </v-container>
 </template>

@@ -1,10 +1,20 @@
 <template>
     <v-container grid-list-md>
 
-        <!-- Sub Header -->
-        <v-subheader>
-            Trending Momos
-        </v-subheader>
+        <!-- Sorting Options -->
+        <v-layout row wrap align-center>
+            <v-flex xs6>
+                <v-subheader>Momos List</v-subheader>
+            </v-flex>
+            <v-flex xs6>
+                <v-select
+                        @change="sortMomos"
+                        v-model="sorting"
+                        :items="sortingOpts"
+                        label="Sort by"
+                ></v-select>
+            </v-flex>
+        </v-layout>
 
         <!-- Meme List -->
         <v-layout row wrap>
@@ -73,7 +83,14 @@
         data() {
             return {
                 momos: [],
-                loading: false
+                loading: false,
+                sorting: 'Newest',
+                sortingOpts: [
+                    'Newest',
+                    'Oldest',
+                    'Most Discussed',
+                    'Most Liked'
+                ]
             }
         },
 
@@ -141,9 +158,30 @@
 
             // :: Sort momos by creation date
             sortMomos() {
-                this.momos.sort((a, b) => {
-                    return new Date(b.createdAt) - new Date(a.createdAt);
-                })
+                switch (this.sorting) {
+                    case 'Newest':
+                    default:
+                        this.momos.sort((a, b) => {
+                            return new Date(b.createdAt) - new Date(a.createdAt);
+                        })
+                        break
+                    case 'Oldest':
+                        this.momos.sort((a, b) => {
+                            return new Date(a.createdAt) - new Date(b.createdAt);
+                        })
+                        break
+                    case 'Most Discussed':
+                        this.momos.sort((a, b) => {
+                            return b.commentCount - a.commentCount;
+                        })
+                        break
+                    case 'Most Liked':
+                        this.momos.sort((a, b) => {
+                            return b.likesCount - a.likesCount;
+                        })
+                        break
+                }
+
             },
 
             goToMomo(id) {

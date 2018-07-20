@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <title>FireMomo</title>
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- FireMomo CSS -->
@@ -25,6 +27,7 @@
             <v-btn icon v-show="backButtonVisible" @click.prevent="goBack">
                 <v-icon>arrow_back</v-icon>
             </v-btn>
+            <img src="/img/logo.png" style="width: 40px">
             <v-toolbar-title class="white--text">FireMomo</v-toolbar-title>
             <v-spacer></v-spacer>
             <!-- Search -->
@@ -42,7 +45,7 @@
         </v-content>
 
         <!-- Footer -->
-        <v-footer color="primary" app>
+        <v-footer color="primary" app style="display: flex; align-items: center; justify-content: center;">
             <span class="white--text">&nbsp; &nbsp;Made with ❤️ by Undecided Team</span>
         </v-footer>
 
